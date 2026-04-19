@@ -84,7 +84,7 @@ const Home = () => {
                 <div className="mt-6 text-center lg:text-left">
                   <h3 className="text-xl font-serif font-semibold text-foreground">Prof. Dr. Maumita Chakraborty</h3>
                   <p className="text-accent text-sm">Professor and HOD</p>
-                  <p className="text-muted-foreground text-xs mt-1">Department of CST & CSIT</p>
+                  <p className="text-muted-foreground text-xs mt-1">Department of CST, CSIT, CSE(CS) & CSE(NW)</p>
                   <p className="text-muted-foreground text-xs mt-1">UEM, Kolkata</p>
                 </div>
               </div>

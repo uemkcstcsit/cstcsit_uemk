@@ -40,7 +40,7 @@ const Contact = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <SectionTitle
             title="Contact Us"
-            subtitle="Get in touch with the Department of CST & CSIT"
+            subtitle="Get in touch with the Department of CST, CSIT, CSE(CS) & CSE(NW)"
           />
 
           <div className="max-w-5xl mx-auto">

@@ -6,14 +6,17 @@ const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: 'https://www.facebook.com/share/18SwXEdtJf/', label: 'Facebook' },
     { icon: Linkedin, href: 'https://www.linkedin.com/company/uemkcstcsit-iedc/', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:uemkcstcsit@gmail.com', label: 'Email' },
+    { icon: Mail, href: 'mailto:cst.csit@uem.edu.in', label: 'Email' },
   ];
 
   const quickLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Events', path: '/events/2025' },
-    { name: 'Contact', path: '/contact' },
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Faculty', path: '/faculty' },
+  { name: 'Events', path: '/events/2025' },
+  { name: 'Magazine', path: '/magazine' },
+  { name: 'Newsletter', path: '/newsletter' },
+  { name: 'Contact', path: '/contact' },
   ];
 
   return (
