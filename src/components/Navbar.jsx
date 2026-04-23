@@ -32,12 +32,12 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-4">
 
             {/* Home */}
             <Link
               to="/"
-              className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
+              className={`relative px-2 py-2 text-sm font-medium transition-all duration-300 ${
                 isActive('/')
                   ? 'text-accent'
                   : 'text-foreground/80 hover:text-accent'
@@ -52,7 +52,7 @@ const Navbar = () => {
             {/* About */}
             <Link
               to="/about"
-              className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
+              className={`relative px-2 py-2 text-sm font-medium transition-all duration-300 ${
                 isActive('/about')
                   ? 'text-accent'
                   : 'text-foreground/80 hover:text-accent'
@@ -64,17 +64,32 @@ const Navbar = () => {
               )}
             </Link>
 
-            {/* Faculty */}
+            {/* FDP */}
             <Link
               to="/faculty"
-              className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
+              className={`relative px-2 py-2 text-sm font-medium transition-all duration-300 ${
                 isActive('/faculty')
                   ? 'text-accent'
                   : 'text-foreground/80 hover:text-accent'
               }`}
             >
-              Faculty
+              FDP
               {isActive('/faculty') && (
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-accent rounded-full" />
+              )}
+            </Link>
+
+            {/* Conference Organised */}
+            <Link
+              to="/conference-organised"
+              className={`relative px-2 py-2 text-sm font-medium transition-all duration-300 ${
+                isActive('/conference-organised')
+                  ? 'text-accent'
+                  : 'text-foreground/80 hover:text-accent'
+              }`}
+            >
+              Conference Organised
+              {isActive('/conference-organised') && (
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-accent rounded-full" />
               )}
             </Link>
@@ -86,7 +101,7 @@ const Navbar = () => {
               onMouseLeave={() => setIsEventsOpen(false)}
             >
               <button
-                className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                className={`flex items-center gap-1 px-2 py-2 text-sm font-medium transition-all duration-300 ${
                   isEventsActive
                     ? 'text-accent'
                     : 'text-foreground/80 hover:text-accent'
@@ -133,7 +148,7 @@ const Navbar = () => {
               onMouseLeave={() => setIsMagazineOpen(false)}
             >
               <button
-                className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                className={`flex items-center gap-1 px-2 py-2 text-sm font-medium transition-all duration-300 ${
                   isMagazineActive
                     ? 'text-accent'
                     : 'text-foreground/80 hover:text-accent'
@@ -176,7 +191,7 @@ const Navbar = () => {
             {/* Newsletter */}
             <Link
               to="/newsletter"
-              className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
+              className={`relative px-2 py-2 text-sm font-medium transition-all duration-300 ${
                 isActive('/newsletter')
                   ? 'text-accent'
                   : 'text-foreground/80 hover:text-accent'
@@ -191,7 +206,7 @@ const Navbar = () => {
             {/* Contact */}
             <Link
               to="/contact"
-              className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
+              className={`relative px-2 py-2 text-sm font-medium transition-all duration-300 ${
                 isActive('/contact')
                   ? 'text-accent'
                   : 'text-foreground/80 hover:text-accent'
@@ -228,7 +243,8 @@ const Navbar = () => {
 
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
           <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-          <Link to="/faculty" onClick={() => setIsMobileMenuOpen(false)}>Faculty</Link>
+          <Link to="/faculty" onClick={() => setIsMobileMenuOpen(false)}>FDP</Link>
+          <Link to="/conference-organised" onClick={() => setIsMobileMenuOpen(false)}>Conference Organised</Link>
 
           {/* Mobile Magazine */}
           <div className="py-2 px-4">

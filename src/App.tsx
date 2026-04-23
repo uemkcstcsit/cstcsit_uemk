@@ -5,7 +5,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Events from "./pages/Events";
-import Faculty from "./pages/Faculty";
+import FDP from "./pages/FDP";
+import ConferenceOrganised from "./pages/ConferenceOrganised";
 import NotFound from "./pages/NotFound";
 import Magazine from "./pages/Magazine";
 import Newsletter from "./pages/Newsletter";
@@ -20,7 +21,8 @@ const App = () => (
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/faculty" element={<Faculty />} />
+        <Route path="/faculty" element={<FDP />} />
+        <Route path="/conference-organised" element={<ConferenceOrganised />} />
         <Route path="/events/:year" element={<Events />} />
 
         {/* REQUIRED */}

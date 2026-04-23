@@ -4,42 +4,42 @@ import GlassCard from '../components/GlassCard';
 import SectionTitle from '../components/SectionTitle';
 import { Users } from 'lucide-react';
 
-// Sample faculty data
-const facultyData = [
+// Sample Conference data
+const conferenceData = [
   {
-    name: 'Dr. Faculty Name',
-    designation: 'Professor',
+    name: 'Conference Title 1',
+    designation: 'Date and Location',
   },
   {
-    name: 'Dr. Faculty Name',
-    designation: 'Associate Professor',
+    name: 'Conference Title 2',
+    designation: 'Date and Location',
   },
   {
-    name: 'Dr. Faculty Name',
-    designation: 'Assistant Professor',
+    name: 'Conference Title 3',
+    designation: 'Date and Location',
   },
   {
-    name: 'Dr. Faculty Name',
-    designation: 'Assistant Professor',
+    name: 'Conference Title 4',
+    designation: 'Date and Location',
   },
   {
-    name: 'Dr. Faculty Name',
-    designation: 'Associate Professor',
+    name: 'Conference Title 5',
+    designation: 'Date and Location',
   },
   {
-    name: 'Dr. Faculty Name',
-    designation: 'Professor',
+    name: 'Conference Title 6',
+    designation: 'Date and Location',
   },
 ];
 
-const Faculty = () => {
+const ConferenceOrganised = () => {
   return (
     <PageLayout>
       <section className="py-12 lg:py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionTitle
-            title="Faculty Members"
-            subtitle="Meet the dedicated faculty members of the department"
+            title="Conference Organised"
+            subtitle="Details about conferences organized by the department"
           />
 
           {/* Icon Header (kept same visual vibe) */}
@@ -50,7 +50,7 @@ const Faculty = () => {
                   <Users className="w-6 h-6 text-accent" />
                 </div>
                 <h2 className="text-2xl font-serif font-bold text-foreground">
-                  Our Faculty
+                  Our Conferences
                 </h2>
               </div>
             </GlassCard>
@@ -58,17 +58,17 @@ const Faculty = () => {
 
           {/* 2 Column Grid */}
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            {facultyData.map((faculty, index) => (
+            {conferenceData.map((conference, index) => (
               <GlassCard
                 key={index}
                 padding="p-6"
                 className="transition-all duration-300 hover:scale-[1.02]"
               >
                 <h3 className="text-xl font-semibold text-foreground mb-2">
-                  {faculty.name}
+                  {conference.name}
                 </h3>
                 <p className="text-muted-foreground">
-                  {faculty.designation}
+                  {conference.designation}
                 </p>
               </GlassCard>
             ))}
@@ -79,4 +79,4 @@ const Faculty = () => {
   );
 };
 
-export default Faculty;
+export default ConferenceOrganised;
