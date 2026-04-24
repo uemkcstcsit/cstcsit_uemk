@@ -235,42 +235,68 @@ const Navbar = () => {
       <div
         className={`lg:hidden glass-card mx-4 mb-4 overflow-hidden transition-all duration-300 ${
           isMobileMenuOpen
-            ? 'max-h-96 opacity-100'
+            ? 'max-h-[600px] opacity-100'
             : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="py-4 px-4 space-y-2">
+        <div className="flex flex-col py-4 px-4 gap-2">
+          <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-2 rounded hover:bg-accent/10">Home</Link>
+          <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-2 rounded hover:bg-accent/10">About</Link>
+          <Link to="/faculty" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-2 rounded hover:bg-accent/10">FDP</Link>
+          <Link to="/conference-organised" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-2 rounded hover:bg-accent/10">Conference Organised</Link>
 
-          <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-          <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-          <Link to="/faculty" onClick={() => setIsMobileMenuOpen(false)}>FDP</Link>
-          <Link to="/conference-organised" onClick={() => setIsMobileMenuOpen(false)}>Conference Organised</Link>
-
-          {/* Mobile Magazine */}
-          <div className="py-2 px-4">
-            <span className="font-medium">Magazine</span>
-            <div className="mt-2 ml-4 space-y-1">
-              {magazineEditions.map((edition) => (
-                <Link
-                  key={edition}
-                  to={`/magazine/${edition}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-1.5 text-sm"
-                >
-                  Edition {edition}
-                </Link>
-              ))}
-            </div>
+          {/* Mobile Events Dropdown */}
+          <div className="py-2 px-2">
+            <button
+              className="flex items-center w-full justify-between font-medium py-2 px-2 rounded hover:bg-accent/10 focus:outline-none"
+              onClick={() => setIsEventsOpen((prev) => !prev)}
+            >
+              <span>Events</span>
+              <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isEventsOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {isEventsOpen && (
+              <div className="mt-2 ml-4 flex flex-col gap-1">
+                {eventYears.map((year) => (
+                  <Link
+                    key={year}
+                    to={`/events/${year}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-1.5 text-sm rounded hover:bg-accent/10"
+                  >
+                    {year}
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
 
-          <Link to="/newsletter" onClick={() => setIsMobileMenuOpen(false)}>
-            Newsletter
-          </Link>
+          {/* Mobile Magazine Dropdown */}
+          <div className="py-2 px-2">
+            <button
+              className="flex items-center w-full justify-between font-medium py-2 px-2 rounded hover:bg-accent/10 focus:outline-none"
+              onClick={() => setIsMagazineOpen((prev) => !prev)}
+            >
+              <span>Magazine</span>
+              <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isMagazineOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {isMagazineOpen && (
+              <div className="mt-2 ml-4 flex flex-col gap-1">
+                {magazineEditions.map((edition) => (
+                  <Link
+                    key={edition}
+                    to={`/magazine/${edition}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-1.5 text-sm rounded hover:bg-accent/10"
+                  >
+                    Edition {edition}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-            Contact
-          </Link>
-
+          <Link to="/newsletter" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-2 rounded hover:bg-accent/10">Newsletter</Link>
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 px-2 rounded hover:bg-accent/10">Contact</Link>
         </div>
       </div>
     </nav>
